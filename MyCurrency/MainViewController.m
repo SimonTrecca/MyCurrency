@@ -141,7 +141,7 @@
         [self disableAllButtons];
     });
     
-    NSString *apiKey= @"cur_live_47mV9h5iw3Nb0R4LeTw0ImKyIEJOPdqBkJovXIUV";
+    NSString *apiKey= @"cur_live_cVINr3drZrZGJK4Sbb7KKieWQlGNGaQHbVfdyl0p";
     NSString *urlString = [NSString stringWithFormat:@"https://api.currencyapi.com/v3/latest?apikey=%@&base_currency=%@&currencies=%@",apiKey,[self.currentPair.first name],[self.currentPair.second name]];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession* session = [NSURLSession sharedSession];

@@ -62,7 +62,7 @@
 }
 
 -(void)getCurrentExchange:(int)atIndex{
-    NSString *apiKey= @"cur_live_47mV9h5iw3Nb0R4LeTw0ImKyIEJOPdqBkJovXIUV";
+    NSString *apiKey= @"cur_live_cVINr3drZrZGJK4Sbb7KKieWQlGNGaQHbVfdyl0p";
     
     NSString* dateString= [self getDate:atIndex];
 

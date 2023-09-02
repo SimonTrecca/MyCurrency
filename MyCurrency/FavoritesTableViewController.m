@@ -72,9 +72,14 @@
     }
     else{
         for(int i=0;i<[self.favorites count];i++){
-            if([[[[self.favorites objectAtIndex:i]first]name] containsString:modifiedString]){
+            
+            NSString *name = [[[[self.favorites objectAtIndex:i]first] name] lowercaseString];
+            NSString *modifiedStringLower = [modifiedString lowercaseString];
+
+            NSRange range = [name rangeOfString:modifiedStringLower options:NSCaseInsensitiveSearch];
+
+            if (range.location != NSNotFound) {
                 [self.filteredData addObject:[self.favorites objectAtIndex:i]];
-                NSLog(@"sus%d",i);
             }
         }
         
