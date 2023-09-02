@@ -30,16 +30,6 @@ static NSArray *ids = @[@"EUR",@"USD",@"JPY",@"GBP",@"BRL",@"CAD",@"DKK",@"HKD",
     return self;
 }
 
--(NSString *)fullName
-{
-    if(!self){
-        return @"Vuoto";
-    }
-    if([self.name isEqual:@"EUR"]) return @"EURO";
-    
-    return @"Aldo";
-}
-
 -(id)copyWithZone:(NSZone *)zone{
     return [[Currency alloc]initWithString:self.name];
 }

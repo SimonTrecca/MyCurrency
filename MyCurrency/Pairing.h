@@ -15,7 +15,7 @@
 @property (strong,nonatomic) Currency *first;
 @property (strong,nonatomic) Currency *second;
 -(instancetype)initWithCurrency1:(Currency*)name1 andCurrency2:(Currency*)name2;
-
+-(bool)equals:(Pairing*)other;
 @end
 
 

@@ -29,4 +29,11 @@
     return [[Pairing alloc]initWithCurrency1:self.first andCurrency2:self.second];
 }
 
+-(bool)equals:(Pairing*)other{
+    if([[[self first]name]isEqualToString:[[other first]name]] && [[[self second]name]isEqualToString:[[other second]name]]){
+        return true;
+    }
+    return false;
+}
+
 @end

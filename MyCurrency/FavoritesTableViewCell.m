@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CustomTableViewCell.h"
-@implementation CustomTableViewCell
+#import "FavoritesTableViewCell.h"
+@implementation FavoritesTableViewCell
 
 @end

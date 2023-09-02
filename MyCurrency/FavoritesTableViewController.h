@@ -6,14 +6,11 @@
 //
 
 
-#ifndef FavoritesTableView_h
-#define FavoritesTableView_h
-
 #import <UIKit/UIKit.h>
 #import "Pairing.h"
 #import "Currency.h"
 
-@interface FavoritesTableView : UITableViewController<UISearchBarDelegate>
+@interface FavoritesTableViewController : UITableViewController<UISearchBarDelegate>
 
 @property(strong,nonatomic) NSMutableArray<Pairing*> *favorites;
 @property(strong,nonatomic) NSMutableArray<Pairing*> *filteredData;
@@ -21,4 +18,4 @@
 
 
 @end
-#endif /* FavoritesTableView_h */
+

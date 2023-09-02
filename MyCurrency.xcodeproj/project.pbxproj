@@ -11,7 +11,6 @@
 		126714622A9033690086D3D3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126714612A9033690086D3D3 /* MainViewController.m */; };
 		127B06CE2A7EBBE4003D459E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 127B06CD2A7EBBE4003D459E /* AppDelegate.m */; };
 		127B06D12A7EBBE4003D459E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 127B06D02A7EBBE4003D459E /* SceneDelegate.m */; };
-		127B06D42A7EBBE4003D459E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127B06D32A7EBBE4003D459E /* ViewController.m */; };
 		127B06D72A7EBBE4003D459E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127B06D52A7EBBE4003D459E /* Main.storyboard */; };
 		127B06D92A7EBBF5003D459E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 127B06D82A7EBBF5003D459E /* Assets.xcassets */; };
 		127B06DC2A7EBBF5003D459E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127B06DA2A7EBBF5003D459E /* LaunchScreen.storyboard */; };
@@ -19,10 +18,10 @@
 		127B06E92A7EBBF6003D459E /* MyCurrencyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 127B06E82A7EBBF6003D459E /* MyCurrencyTests.m */; };
 		127B06F32A7EBBF6003D459E /* MyCurrencyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 127B06F22A7EBBF6003D459E /* MyCurrencyUITests.m */; };
 		127B06F52A7EBBF6003D459E /* MyCurrencyUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 127B06F42A7EBBF6003D459E /* MyCurrencyUITestsLaunchTests.m */; };
-		128962D62A91051E003DA60F /* FavoritesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 128962D52A91051E003DA60F /* FavoritesTableView.m */; };
+		128962D62A91051E003DA60F /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128962D52A91051E003DA60F /* FavoritesTableViewController.m */; };
 		128962DA2A910B28003DA60F /* StoricoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128962D92A910B28003DA60F /* StoricoTableViewController.m */; };
 		128962DC2A91114A003DA60F /* Pairing.m in Sources */ = {isa = PBXBuildFile; fileRef = 128962DB2A91114A003DA60F /* Pairing.m */; };
-		128962DF2A98190D003DA60F /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 128962DE2A98190D003DA60F /* CustomTableViewCell.m */; };
+		128962DF2A98190D003DA60F /* FavoritesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 128962DE2A98190D003DA60F /* FavoritesTableViewCell.m */; };
 		12B592992A8FB7E5000410E3 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B592982A8FB7E4000410E3 /* Currency.m */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +52,6 @@
 		127B06CD2A7EBBE4003D459E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		127B06CF2A7EBBE4003D459E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		127B06D02A7EBBE4003D459E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		127B06D22A7EBBE4003D459E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		127B06D32A7EBBE4003D459E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		127B06D62A7EBBE4003D459E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		127B06D82A7EBBF5003D459E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		127B06DB2A7EBBF5003D459E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,14 +62,14 @@
 		127B06EE2A7EBBF6003D459E /* MyCurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		127B06F22A7EBBF6003D459E /* MyCurrencyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCurrencyUITests.m; sourceTree = "<group>"; };
 		127B06F42A7EBBF6003D459E /* MyCurrencyUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCurrencyUITestsLaunchTests.m; sourceTree = "<group>"; };
-		128962D52A91051E003DA60F /* FavoritesTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableView.m; sourceTree = "<group>"; };
-		128962D72A910537003DA60F /* FavoritesTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritesTableView.h; sourceTree = "<group>"; };
+		128962D52A91051E003DA60F /* FavoritesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
+		128962D72A910537003DA60F /* FavoritesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		128962D82A910B14003DA60F /* StoricoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoricoTableViewController.h; sourceTree = "<group>"; };
 		128962D92A910B28003DA60F /* StoricoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoricoTableViewController.m; sourceTree = "<group>"; };
 		128962DB2A91114A003DA60F /* Pairing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pairing.m; sourceTree = "<group>"; };
 		128962DD2A91115C003DA60F /* Pairing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pairing.h; sourceTree = "<group>"; };
-		128962DE2A98190D003DA60F /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
-		128962E02A981925003DA60F /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		128962DE2A98190D003DA60F /* FavoritesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewCell.m; sourceTree = "<group>"; };
+		128962E02A981925003DA60F /* FavoritesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewCell.h; sourceTree = "<group>"; };
 		12B592982A8FB7E4000410E3 /* Currency.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		12B5929A2A8FB80C000410E3 /* Currency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,17 +126,15 @@
 				127B06CD2A7EBBE4003D459E /* AppDelegate.m */,
 				127B06CF2A7EBBE4003D459E /* SceneDelegate.h */,
 				127B06D02A7EBBE4003D459E /* SceneDelegate.m */,
-				127B06D22A7EBBE4003D459E /* ViewController.h */,
 				126714612A9033690086D3D3 /* MainViewController.m */,
 				126714632A9033880086D3D3 /* MainViewController.h */,
-				127B06D32A7EBBE4003D459E /* ViewController.m */,
 				127B06D52A7EBBE4003D459E /* Main.storyboard */,
 				128962DB2A91114A003DA60F /* Pairing.m */,
 				128962DD2A91115C003DA60F /* Pairing.h */,
-				128962D72A910537003DA60F /* FavoritesTableView.h */,
-				128962D52A91051E003DA60F /* FavoritesTableView.m */,
-				128962DE2A98190D003DA60F /* CustomTableViewCell.m */,
-				128962E02A981925003DA60F /* CustomTableViewCell.h */,
+				128962D72A910537003DA60F /* FavoritesTableViewController.h */,
+				128962D52A91051E003DA60F /* FavoritesTableViewController.m */,
+				128962DE2A98190D003DA60F /* FavoritesTableViewCell.m */,
+				128962E02A981925003DA60F /* FavoritesTableViewCell.h */,
 				12358C1F2A996CC6000FB3B3 /* StoricoTableViewCell.m */,
 				12358C212A996CE4000FB3B3 /* StoricoTableViewCell.h */,
 				128962D82A910B14003DA60F /* StoricoTableViewController.h */,
@@ -301,16 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				127B06D42A7EBBE4003D459E /* ViewController.m in Sources */,
 				128962DA2A910B28003DA60F /* StoricoTableViewController.m in Sources */,
 				126714622A9033690086D3D3 /* MainViewController.m in Sources */,
 				128962DC2A91114A003DA60F /* Pairing.m in Sources */,
 				127B06CE2A7EBBE4003D459E /* AppDelegate.m in Sources */,
 				12358C202A996CC7000FB3B3 /* StoricoTableViewCell.m in Sources */,
-				128962D62A91051E003DA60F /* FavoritesTableView.m in Sources */,
+				128962D62A91051E003DA60F /* FavoritesTableViewController.m in Sources */,
 				127B06DF2A7EBBF5003D459E /* main.m in Sources */,
 				127B06D12A7EBBE4003D459E /* SceneDelegate.m in Sources */,
-				128962DF2A98190D003DA60F /* CustomTableViewCell.m in Sources */,
+				128962DF2A98190D003DA60F /* FavoritesTableViewCell.m in Sources */,
 				12B592992A8FB7E5000410E3 /* Currency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,22 +6,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FavoritesTableView.h"
-#import "CustomTableViewCell.h"
-@interface FavoritesTableView()
+#import "FavoritesTableViewController.h"
+#import "FavoritesTableViewCell.h"
+@interface FavoritesTableViewController()
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchFavorites;
 
 
 @end
 
-@implementation FavoritesTableView
+@implementation FavoritesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.searchFavorites.delegate=self;
     self.filteredData=self.favorites;
-    NSLog(@"sussy baka");
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -33,7 +32,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CustomTableViewCell *cell = (CustomTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"FavoriteCell" forIndexPath:indexPath];
+    FavoritesTableViewCell *cell = (FavoritesTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"FavoriteCell" forIndexPath:indexPath];
     unsigned long i= indexPath.row;
     
     cell.first.text=self.filteredData[i].first.name;
@@ -44,7 +43,8 @@
     cell.second.text=self.filteredData[i].second.name;
     countryFlag=[UIImage imageNamed:self.filteredData[i].second.name];
     [cell.imageSecond setImage:countryFlag];
-    
+    [cell.backButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+
     return cell;
 }
 
@@ -55,10 +55,9 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    NSLog(@"Amogus");
     self.filteredData=[[NSMutableArray alloc]init];
     
-    unichar charToRemove = ' '; // Character to remove
+    unichar charToRemove = ' ';
 
     NSMutableString *modifiedString = [NSMutableString stringWithString:searchText];
     NSRange range = [modifiedString rangeOfString:[NSString stringWithCharacters:&charToRemove length:1]];
@@ -84,12 +83,29 @@
     [self.tableView reloadData];
 }
 
--(IBAction)dropKeyboard{
-    if ([self.searchFavorites isFirstResponder])
-        [self.searchFavorites resignFirstResponder];
-}
-    
+- (void)buttonClicked:(UIButton *)sender {
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
 
+    
+    if (indexPath) {
+        NSLog(@"Button in cell at indexPath section %ld, row %ld clicked", (long)indexPath.section, (long)indexPath.row);
+        FavoritesTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        NSString* first=cell.first.text;
+        NSString* second=cell.second.text;
+        
+        Currency* tmp1= [[Currency alloc]initWithString:first];
+        Currency* tmp2= [[Currency alloc]initWithString:second];
+        Pairing* tmp= [[Pairing alloc]initWithCurrency1:tmp1 andCurrency2:tmp2];
+        [self.filteredData removeObjectAtIndex:indexPath.row];
+        for(int i=0;i<[self.favorites count];i++){
+            if([[self.favorites objectAtIndex:i]equals:tmp]){
+                [self.favorites removeObjectAtIndex:i];
+            }
+        }
+        [self.tableView reloadData];
+    }
+}
 
 @end
 

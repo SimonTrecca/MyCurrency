@@ -8,7 +8,7 @@
 #import "MainViewController.h"
 #import "Currency.h"
 #import "Pairing.h"
-#import "FavoritesTableView.h"
+#import "FavoritesTableViewController.h"
 #import "StoricoTableViewController.h"
 @interface MainViewController ()
 
@@ -38,6 +38,7 @@
     
     self.currentPair= [[Pairing alloc]initWithCurrency1:[[Currency alloc]initWithString:@"EUR"] andCurrency2:[[Currency alloc]initWithString:@"USD"]];
     
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -55,6 +56,7 @@
     
     [self.currencyButton2 setTitle:self.currentPair.second.name forState:UIControlStateNormal];
     [self.currencyButton2 setImage:countryFlag forState:UIControlStateNormal];
+    
 }
 
 
@@ -64,9 +66,9 @@
     
     unsigned long idsSize= [[Currency getIds]count];
     
-    NSLog(@"La size e' %ld",idsSize);
     NSArray* savedIds = [Currency getIds];
     UIImage* countryFlag;
+    
     for(int i=0;i<idsSize;i++){
         countryFlag=[UIImage imageNamed:savedIds[i]];
         CGSize newSize = CGSizeMake(60, 45);
@@ -88,7 +90,6 @@
     
     unsigned long idsSize= [[Currency getIds]count];
     
-    NSLog(@"La size e' %ld",idsSize);
     NSArray* savedIds = [Currency getIds];
     UIImage* countryFlag;
     
@@ -98,7 +99,6 @@
         countryFlag=[self setImageSize:countryFlag toSize:newSize];
         UIAction *tmp= [UIAction actionWithTitle:savedIds[i] image:countryFlag identifier:nil handler:^(UIAction * _Nonnull action) {
             [button setTitle:savedIds[i] forState:UIControlStateNormal];
-
             [button setImage:countryFlag forState:UIControlStateNormal];
             self.currentPair.second=[[Currency alloc]initWithString:savedIds[i]];
         }];
@@ -110,8 +110,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"favoriteSegue"]) {
-            if([segue.destinationViewController isKindOfClass:[FavoritesTableView class]]) {
-                FavoritesTableView *fVC = (FavoritesTableView *)segue.destinationViewController;
+            if([segue.destinationViewController isKindOfClass:[FavoritesTableViewController class]]) {
+                FavoritesTableViewController *fVC = (FavoritesTableViewController *)segue.destinationViewController;
                 fVC.favorites = self.favorites;
                 fVC.currentPair=self.currentPair;
             }
@@ -126,15 +126,21 @@
 
 
 - (IBAction)onClickFavorite{
+
+    for(int i=0;i<[self.favorites count];i++){
+        if([[self.favorites objectAtIndex:i]equals:self.currentPair]){
+            return;
+        }
+    }
     [self.favorites addObject:[self.currentPair copy]];
-    NSLog(@"Aldo");
 }
 
 -(IBAction)onClickConvert{
-    NSLog(@"Fausto");
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self disableAllButtons];
     });
+    
     NSString *apiKey= @"cur_live_47mV9h5iw3Nb0R4LeTw0ImKyIEJOPdqBkJovXIUV";
     NSString *urlString = [NSString stringWithFormat:@"https://api.currencyapi.com/v3/latest?apikey=%@&base_currency=%@&currencies=%@",apiKey,[self.currentPair.first name],[self.currentPair.second name]];
     NSURL *url = [NSURL URLWithString:urlString];

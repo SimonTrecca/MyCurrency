@@ -13,7 +13,6 @@
 @property (strong,nonatomic) NSString *name;
 -(instancetype)initWithString:(NSString* )name;
 -(id)copyWithZone:(NSZone *)zone;
--(NSString*)fullName;
 +(NSArray*) getIds;
 @end
 

@@ -54,9 +54,7 @@
     NSString* dateString= [self getDate:i];
     
     cell.exchange.text= [NSString stringWithFormat:@"%lf",[[self.historyExchanges objectAtIndex:i] doubleValue]];
-   // [self addBorder:cell.exchange];
     cell.dateLabel.text=dateString;
-   // [self addBorder:cell.dateLabel];
     
    
     
@@ -81,14 +79,11 @@
         if(value==nil){
             value=@4000;
         }
-        NSLog(@"value: %@",value);
         self.historyExchanges[atIndex]=value;
         
         self.requestsMade++;
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             [self.storicoTableView reloadData];
-            NSLog(@"Paolo");
             
         });
         
@@ -112,11 +107,5 @@
     return [dateFormatter stringFromDate:modifiedDate];
 }
 
--(void)addBorder:(UILabel*)label{
-    label.layer.borderWidth = 2.0; // You can adjust the border width as needed
-    label.layer.borderColor = [[UIColor blackColor] CGColor]; // Change the color as needed
-    label.layer.cornerRadius = 8.0; // Optional: Add rounded corners if desired
-    label.clipsToBounds = YES; // Ensure the label contents stay within the borders
-}
 
 @end
